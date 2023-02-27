@@ -4,7 +4,6 @@ package com.springboot.demo1.controller;
 import com.springboot.demo1.model.User;
 import com.springboot.demo1.service.UserService;
 import jakarta.validation.Valid;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -18,12 +17,8 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/users")
 public class UsersController {
 
-    private UserService userService;
+    private final UserService userService;
 
-    public UsersController() {
-    }
-
-    @Autowired
     public UsersController(UserService userService) {
         this.userService = userService;
     }

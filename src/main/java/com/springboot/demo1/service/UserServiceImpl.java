@@ -3,7 +3,6 @@ package com.springboot.demo1.service;
 
 import com.springboot.demo1.model.User;
 import com.springboot.demo1.repositories.UserRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -18,15 +17,10 @@ import java.util.List;
 
 public class UserServiceImpl  implements UserService {
 
-    public UserRepository userRepository;
+    private final UserRepository userRepository;
 
-    @Autowired
     public UserServiceImpl(UserRepository userRepository) {
-        super();
         this.userRepository = userRepository;
-    }
-
-    public UserServiceImpl() {
     }
 
 
